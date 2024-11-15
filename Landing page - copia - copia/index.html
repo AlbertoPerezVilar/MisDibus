@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dibus - Dibujos para peques</title>
+    <meta name="description"
+        content="Explora el portafolio de Alberto en 'Mis Dibus', especializado en ilustración infantil y cuentos ilustrados llenos de creatividad y color. ¡Suscríbete para recibir las últimas novedades y sumérgete en un mundo mágico de arte para niños">
+    <link rel="icon" href="img/Guyu.webp" type="image/webp">
+ <link rel="stylesheet" href="css/style.css">
+
+   <body>
+    <div class="logo-container">
+        <a href="javascript:void (0)" onclick="showPopup()">
+            <img src="img/Logo_MisDibus.webp" alt="Logotipo de Mis Dibus" style="max-width: 200px; height: auto;">
+        </a>
+    </div>
+    <div class="drawings-container">
+        <img src="img/Edgar.webp" alt="Edgar" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="container">
+        <div class="column">
+            <h1>¡Hola!</h1>
+            <p style="line-height: 2; "Montserrat">¡Bienvenido a "Mis Dibus"! Soy Alberto, un apasionado ilustrador de cuentos
+                infantiles. Aquí encontrarás
+                un mundo mágico lleno de color y creatividad, donde las historias cobran vida a través de mis
+                ilustraciones. Si quieres estar al tanto de mis últimos proyectos, novedades y consejos sobre
+                ilustración, ¡suscríbete a mi boletín! Únete a esta aventura y déjame llevarte a un universo lleno de
+                imaginación.</p>
+        </div>
+        <div class="column">
+            <h1>¡Registra tus datos y sé parte de la comunidad!</h1>
+            <form aria-labelledby="form-title">
+                <label for="nombre"><strong>Nombre:</strong></label><br><br>
+                <input type="text" id="nombre" name="nombre" required aria-required="true"
+                    placeholder="Introduce tu nombre"><br><br>
+                <label for="lugar"><strong>Ciudad:</strong></label><br><br>
+                <input type="text" id="lugar" name="lugar" required aria-required="true"
+                    placeholder="Introduce tu ciudad"><br><br>
+                <label for="telefono"><strong>Teléfono:</strong></label>
+                <span style="font-size: 0.8em; display: block; margin-top: 5px;">(Opcional)</span>
+                <input type="text" id="telefono" name="telefono" placeholder="Introduce tu teléfono">
+                <br><br>
+                <button class="btn">Enviar</button>
+            </form>
+        </div>
+        <div class="column">
+            <h1>¡Suscríbete al boletín de novedades!</h1>
+            <form aria-labelledby="form-title">
+                <label for="email"> <strong> Correo Electrónico:</strong></label><br><br>
+                <input type="email" id="email" name="email" required aria-required="true"
+                    placeholder="Introduce tu correo electrónico"><br><br>
+                <button class="btn">Suscribirme</button>
+            </form>
+        </div>
+    </div>
+    <div class="drawings-container">
+        <img src="img/Guyu.webp" alt="Guyu" style="max-width: 100%; height: auto;">
+    </div>
+    <div class="footer">
+        <h2 style="line-height: 2;">Síguenos en nuestras redes sociales y comunicate con nosotros:</h2>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/albertoperezvilarilustracion/" target="_blank"><img
+                    src="img/Instagram.webp" alt="Instagram"></a>
+            <a href="https://wa.me/34689744305" target="_blank"><img src="img/whatsapp.webp" alt="whatsapp"></a>
+        </div>
+        <p>&copy; 2024 Mis Dibus. Todos los derechos reservados.</p>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>¿Quieres ir a la página de Mis Dibus?</p>
+            <button class="btn" onclick="goToMisDibus()">Ir a Mis Dibus</button>
+        </div>
+    </div>
+</body>
+<script>
+    function showPopup() {
+        document.getElementById('myModal').style.display = 'block';
+    }
+    function closeModal() {
+        document.getElementById('myModal').style.display = 'none';
+    }
+    function goToMisDibus() {
+        window.open("https://www.behance.net/albertoprezvilar", "_blank");
+    }
+</script>
+</head>
+
+</html>
