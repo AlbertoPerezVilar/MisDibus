@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dibus</title>
+    <meta name="description"
+        content="Explora el portafolio de Alberto en 'Mis Dibus', especializado en ilustración infantil y cuentos ilustrados llenos de creatividad y color. ¡Suscríbete para recibir las últimas novedades y sumérgete en un mundo mágico de arte para niños">
+    <link rel="icon" href="img/Guyu.webp" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            position: relative; /* Para posicionar el carrusel */
+        }
+
+        .diagonal-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ececec;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .white-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 0);
+            z-index: 2;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            z-index: 3;
+            border: 5px solid #00f5ff; /* Borde de color y grosor */
+            border-radius: 10px; /* Opcional: esquinas redondeadas */
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-image {
+            min-width: 100%;
+            transition: opacity 0.5s ease;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 4;
+        }
+
+        .arrow-left {
+            left: 10px;
+        }
+
+        .arrow-right {
+            right: 10px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 20%;
+            max-width: 200px;
+            z-index: 5;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg);
+        }
+
+        .inicio-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-image: url('img/inicio.webp');
+            background-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+            border: none;
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        .inicio-button:hover {
+            filter: brightness(0.4);
+        }
+
+        @media (max-width: 600px) {
+            .inicio-button {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagonal-background"></div>
+    <div class="white-background"></div>
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="img/Caperucita-1.webp" alt="Caperucita 1" class="carousel-image">
+            <img src="img/Caperucita-2.webp" alt="Caperucita 2" class="carousel-image">
+            <img src="img/Caperucita-3.webp" alt="Caperucita 3" class="carousel-image">
+            <img src="img/Caperucita-4.webp" alt="Caperucita 4" class="carousel-image">
+            <img src="img/Caperucita-5.webp" alt="Caperucita 5" class="carousel-image">
+            <img src="img/Caperucita-6.webp" alt="Caperucita 6" class="carousel-image">
+            <img src="img/Caperucita-7.webp" alt="Caperucita 7" class="carousel-image">
+            <img src="img/Caperucita-8.webp" alt="Caperucita 8" class="carousel-image">
+            <img src="img/Caperucita-9.webp" alt="Caperucita 9" class="carousel-image">
+            <img src="img/Caperucita-10.webp" alt="Caperucita 10" class="carousel-image">
+            <img src="img/Caperucita-11.webp" alt="Caperucita 11" class="carousel-image">
+            <img src="img/Caperucita-12.webp" alt="Caperucita 12" class="carousel-image">
+            <img src="img/Caperucita-13.webp" alt="Caperucita 13" class="carousel-image">
+            <img src="img/Caperucita-14.webp" alt="Caperucita 14" class="carousel-image">
+        </div>
+        <button class="arrow arrow-left" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="arrow arrow-right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <img src="img/Logo_MisDibus.webp" alt="Logo" class="logo">
+    <a href="index.html" class="inicio-button"></a>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const images = document.querySelectorAll('.carousel-image');
+            currentIndex += direction;
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            } else if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+            const offset = -currentIndex * 100;
+            document.querySelector('.carousel-images').style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+
+</html>

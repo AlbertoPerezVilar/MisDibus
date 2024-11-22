@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dibus</title>
+    <meta name="description"
+        content="Explora el portafolio de Alberto en 'Mis Dibus', especializado en ilustración infantil y cuentos ilustrados llenos de creatividad y color. ¡Suscríbete para recibir las últimas novedades y sumérgete en un mundo mágico de arte para niños">
+    <link rel="icon" href="img/Guyu.webp" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-direction: column;
+        }
+
+        .diagonal-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ececec;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .white-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 0);
+            z-index: 2;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 20%;
+            max-width: 200px;
+            z-index: 5;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg);
+        }
+        
+        .image-container {
+            border: 5px solid #9cff2f; 
+            border-radius: 10px; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* Asegúrate de que el contenedor tenga posición relativa */
+            z-index: 3; /* Asegúrate de que esté por encima de los fondos */
+            width: auto; /* Cambia a auto para que se ajuste al contenido */
+            max-width: 400px; /* Ajusta el ancho máximo según sea necesario */
+            height: auto; /* Ajusta la altura si es necesario */
+            padding: 0;
+            margin-bottom: 20px
+        }
+
+        .alberto-image {
+            width: 300px;
+            height: auto;
+        }
+
+        .inicio-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-image: url('img/inicio.webp');
+            background-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+            border: none;
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        .inicio-button:hover {
+            filter: brightness(0.4);
+        }
+        .description {
+            text-align: center; 
+            padding: 0 20px; 
+            z-index: 4;
+            font-size: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .inicio-button {
+                width: 80px;
+                height: 80px;
+            }
+            .alberto-image {
+                width: 200px; 
+            }
+            .description {
+            text-align: center;
+            padding: 0 20px;
+            z-index: 4;
+            font-size: 14px; 
+        }  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagonal-background"></div>
+    <div class="white-background"></div>
+    <div class="image-container">
+        <img src="img/alberto.webp" alt="Alberto" class="alberto-image">
+    </div>
+    <img src="img/Logo_MisDibus.webp" alt="Logo" class="logo">
+    <p class="description">Hola, soy <strong>Alberto</strong>, ilustrador de cuentos infantiles.<br> Me apasiona crear mundos imaginarios llenos de color y emoción para niños de todas las edades.<br> A través de mis ilustraciones, busco despertar la creatividad y la curiosidad<br> de los pequeños, llevando las historias a la vida con personajes y escenarios que capturan su atención.<br> Cada dibujo es una invitación a soñar, explorar y aprender.</p>
+     <a href="index.html" class="inicio-button"></a>
+</body>
+
+</html>

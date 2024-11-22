@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dibus</title>
+    <meta name="description"
+        content="Explora el portafolio de Alberto en 'Mis Dibus', especializado en ilustración infantil y cuentos ilustrados llenos de creatividad y color. ¡Suscríbete para recibir las últimas novedades y sumérgete en un mundo mágico de arte para niños">
+    <link rel="icon" href="img/Guyu.webp" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .diagonal-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ececec;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .white-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 0);
+            z-index: 2;
+        }
+
+        .content {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .card {
+            position: relative;
+            margin: 10px;
+            width: 200px;
+            height: 300px;
+            perspective: 1000px;
+            z-index: 4;
+            transition: transform 0.6s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            transform: translateZ(10px);
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg) translateZ(10px);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .card-front {
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .card-back {
+            background-color: #ffffff;
+            border: 5px solid #33ff3f;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            transform: rotateY(180deg);
+            padding: 1%;
+        }
+
+        button {
+            border: none;
+            padding: 0;
+            cursor: pointer;
+        }
+
+        .logo {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            width: 20%;
+            max-width: 200px;
+            z-index: 5;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg);
+        }
+
+        .description {
+            width: 80%;
+            text-align: center;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #333;
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            visibility: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .card-back .description {
+            visibility: visible;
+        }
+
+        .contact-button,
+        .who-button {
+            position: absolute;
+            top: 20px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        .contact-button {
+            right: 20px;
+            background-image: url('img/contacto.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+        }
+
+        .contact-button:hover {
+            filter: brightness(0.4);
+        }
+
+        .who-button {
+            right: 160px;
+            background-image: url('img/quien.webp');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 100px;
+            height: 100px;
+            margin-top: 13px;
+        }
+
+        .who-button:hover {
+            filter: brightness(0.4);
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                width: 180px; 
+                height: 250px; 
+            }
+
+            .description {
+                font-size: 10px; 
+                padding: 5px;
+            }
+
+            .contact-button,
+            .who-button {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagonal-background"></div>
+    <div class="white-background"></div>
+    <div class="content">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front" style="background-image: url('img/Edgar.webp');"></div>
+                <div class="card-back">
+                    <a href="galeria3.html">
+                        <button>
+                            <img src="img/ojo_3.png" alt="Ver" style="width: 40px; height: 20px;">
+                        </button>
+                    </a>
+                    <div class="description">
+                        <strong>Edgar</strong> es un personaje de cuento ilustrado, escrito por <strong>Alberto Pérez
+                            Vilar</strong>, el creador de "Mis Dibus". Este niño tímido, que no encuentra su lugar en el
+                        mundo, cobra vida a través de una técnica tradicional en tinta sobre papel, con recortes y
+                        montaje fotográfico que le otorgan un efecto tridimensional y juegan con las sombras. Con una
+                        paleta limitada de blanco, gris, rojo y negro, esta obra creada en <strong>2023</strong> destaca
+                        el estilo único de Alberto y su talento en la <strong>ilustración artesanal</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front" style="background-image: url('img/Ariadna.webp');"></div>
+                <div class="card-back">
+                    <a href="galeria4.html"> 
+                        <button>
+                            <img src="img/ojo_3.png" alt="Ver" style="width: 40px; height: 20px;">
+                        </button>
+                    </a>
+                    <div class="description">
+                        <strong>Ariadna</strong>, protagonista de <strong>“Mis Letras” de Juan Antonio Sillero</strong>,
+                        es una niña apasionada por la escritura. Este cuento, ilustrado con técnica mixta que combina
+                        trazos en tinta y pincel con colores digitales, muestra el mundo creativo de Ariadna y su amor
+                        por las palabras. Creado en <strong>2018</strong>, "Mis Letras" refleja el estilo único de
+                        Sillero y su habilidad para fusionar técnicas tradicionales y digitales.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front" style="background-image: url('img/Guyu.webp');"></div>
+                <div class="card-back">
+                    <a href="galeria2.html"> 
+                        <button>
+                            <img src="img/ojo_3.png" alt="Ver" style="width: 40px; height: 20px;">
+                        </button>
+                    </a>
+                    <div class="description">
+                        <strong>Guyu, el pequeño ratón</strong>, es un cuento escrito por <strong>Sandra
+                            Fernández</strong> de <strong>2024</strong> que narra el sueño de un ratoncito de alcanzar
+                        la luna. Con un estilo digital que conserva el <strong>espíritu de la ilustración
+                            tradicional</strong>, esta obra captura la ternura y aspiraciones de Guyu, transportando al
+                        lector a un mundo lleno de encanto y aventura.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front" style="background-image: url('img/Caperucita.webp');"></div>
+                <div class="card-back">
+                    <a href="galeria1.html">
+                        <button>
+                            <img src="img/ojo_3.png" alt="Ver" style="width: 40px; height: 20px;">
+                        </button>
+                    </a>
+                    <div class="description">
+                        <strong>La verdadera historia de Caperucita Roja</strong> es un cuento alternativo al clásico
+                        escrito por <strong>Maite Moreno Córcoles</strong>, creado en 2024 con <strong>técnica
+                            digital </strong>. Esta versión reinterpreta la historia tradicional, ofreciendo una
+                        perspectiva fresca y sorprendente que cautiva al lector, llevándolo a descubrir un lado nuevo y
+                        desconocido de Caperucita Roja. Creado, ideado y dibujado en <strong>2024</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="img/Logo_MisDibus.webp" alt="Logo" class="logo">
+    <a href="pagina_contacto.html" class="contact-button"></a>
+    <a href="quien.html" class="who-button"></a>
+</body>
+
+</html>

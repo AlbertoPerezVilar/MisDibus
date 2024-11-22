@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Dibus</title>
+    <meta name="description"
+        content="Explora el portafolio de Alberto en 'Mis Dibus', especializado en ilustración infantil y cuentos ilustrados llenos de creatividad y color. ¡Suscríbete para recibir las últimas novedades y sumérgete en un mundo mágico de arte para niños">
+    <link rel="icon" href="img/Guyu.webp" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            width: 100%;
+            height: auto; /* Cambiado a auto para permitir el scroll */
+            overflow: auto; /* Permitir el desplazamiento */
+            font-family: 'Montserrat', sans-serif; /* Cambiado a Montserrat */
+            display: flex;
+            flex-direction: column; /* Cambiado a columna para permitir el scroll */
+            align-items: center; 
+        }
+
+        .diagonal-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ececec;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            z-index: 1;
+        }
+
+        .white-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 0);
+            z-index: 2;
+        }
+
+        .content {
+            z-index: 3;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+        }
+
+        .logo {
+            position: absolute;
+            top: 20px; /* Ajustar la posición para móviles */
+            left: 20px; /* Ajustar la posición para móviles */
+            width: 15%; /* Ajustar el tamaño del logo */
+            max-width: 150px; /* Tamaño máximo del logo */
+            z-index: 5;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+
+        .logo:hover {
+            transform: rotateY(180deg);
+        }
+
+        .inicio-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-image: url('img/inicio.webp');
+            background-color: transparent;
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 80px; /* Ajustar el tamaño del botón */
+            height: 80px; /* Ajustar el tamaño del botón */
+            border: none;
+            cursor: pointer;
+            z-index: 6;
+        }
+
+        .inicio-button:hover {
+            filter: brightness(0.4);
+        }
+
+        .form-container {
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            z-index: 4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-container img {
+            max-width: 100%;
+            margin-bottom: 20px; 
+            width: 150px; /* Mantener el tamaño original de la imagen de contacto */
+            height: auto; 
+        }
+
+        .form-container label {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 5px;
+            font-family: 'Montserrat', sans-serif; /* Cambiado a Montserrat */
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center; /* Centra el texto dentro de los campos de entrada */
+            font-family: 'Montserrat', sans-serif; /* Cambiado a Montserrat */
+        }
+
+        .form-container button {
+            background-color: #33ff3f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center; 
+            width: 100%; 
+            font-family: 'Montserrat', sans-serif; /* Cambiado a Montserrat */
+        }
+
+        .form-container button:hover {
+            background-color: blue;
+        }
+
+        .image-right {
+            width: 8%; /* Mantener el tamaño original de la imagen */
+            height: auto; 
+            margin-top: 20px; /* Espacio entre el formulario y la imagen */
+        }
+
+        @media (max-width: 600px) {
+            .form-container {
+                padding: 10px; /* Reducir el padding para pantallas pequeñas */
+                max-width: 90%; /* Hacer el formulario más ancho */
+            }
+
+            .form-container img {
+                width: 100px; /* Ajustar el tamaño de la imagen de contacto */
+                height: auto; 
+            }
+
+            .form-container label {
+                font-size: 14px; /* Ajustar el tamaño de la fuente */
+            }
+
+            .form-container input,
+            .form-container textarea {
+                padding: 8px; /* Reducir el padding en campos de entrada */
+                font-size: 14px; /* Ajustar el tamaño de la fuente */
+            }
+
+            .form-container button {
+                padding: 8px; /* Reducir el padding en el botón */
+                font-size: 14px; /* Ajustar el tamaño de la fuente */
+            }
+
+            .logo {
+                width: 25%; /* Ajustar el tamaño del logo para móviles */
+                max-width: 100px; /* Tamaño máximo del logo */
+            }
+
+            .inicio-button {
+                width: 60px; /* Ajustar el tamaño del botón */
+                height: 60px; /* Ajustar el tamaño del botón */
+            }
+
+            .image-right {
+                order: 1; /* Cambiar el orden para que la imagen esté debajo del formulario */
+                width: 20%; /* Asegurarse de que la imagen mantenga su tamaño original */
+                height: auto; /* Asegurarse de que la imagen mantenga su tamaño original */
+                margin-top: 20px; /* Espacio entre el formulario y la imagen */
+            }
+
+           
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagonal-background"></div>
+    <div class="white-background"></div>
+    <div class="content">
+        <div class="form-container">
+            <img src="img/contacto.png" alt="Contacto" />
+            <form>
+                <label for="nombre"><strong>Nombre:</strong></label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="email"><strong>Correo electrónico:</strong></label>
+                <input type="email" id="email" name="email" required>
+                <label for="comentario"><strong>Manda tu comentario, duda, propuesta:</strong></label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+        <img src="img/Caballero.webp" alt="Caballero" class="image-right"/>
+    </div>
+    <img src="img/Logo_MisDibus.webp" alt="Logo" class="logo">
+    <a href="index.html" class="inicio-button"></a>
+</body>
+
+</html>
